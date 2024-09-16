@@ -9,6 +9,8 @@ import img4 from "../../imgs/dollar.png";
 import imgs1 from "../../imgs/p1.png";
 import imgs2 from "../../imgs/image (18).png";
 import imgs3 from "../../imgs/p2.png";
+import iconn from "../../imgs/icon.png";
+import ch from "../../imgs/ch.png";
 function Bar() {
   return (
     <div className="bar">
@@ -36,12 +38,12 @@ function Bar() {
           eiusmod tempor incididunt.{" "}
         </p>
         <div className="btn-row">
-          <button className="bar2-btn">Add Details</button>
-          <button className="bar2-btn">Add Note</button>
+          <button className="bar2-btn2">Add Details</button>
+          <button className="bar2-btn2">Add Note</button>
         </div>
       </div>
       <div className="menu">
-        <h2 className="menu-title"></h2>
+        <h2 className="menu-title">Order Menu</h2>
         <div className="menu-row">
           <div className="menu-row2">
             <div className="menu-left">
@@ -102,8 +104,20 @@ function Bar() {
       </div>
       <div className="hr"></div>
       <div className="sevice">
-        <div className="s-row"></div>
-        <div className="s-row"></div>
+        <div className="s-row">
+          <h2 className="s-title">Service</h2>
+          <h2 className="s-title2">+$1.00</h2>
+        </div>
+        <div className="s-row">
+          <h2 className="s-title3">Total</h2>
+          <h2 className="s-title4">$202.00</h2>
+        </div>
+        <button className="s-btn">
+          <img src={iconn} alt="" className="btn-imgs" />
+          Have a coupon code?
+          <img src={ch} alt="" className="btn-imgs" />
+        </button>
+        <button className="orange">Checkout</button>
       </div>
     </div>
   );
