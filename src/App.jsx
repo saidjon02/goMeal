@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Aside from "./Components/Aside";
 import Bar from "./Components/Bar";
+import "boxicons";
 import Not from "./Components/Not";
 
 function App() {

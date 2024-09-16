@@ -1,0 +1,75 @@
+{
+  "item": [
+    {
+      "img": "../imgs/card-img (1).png",
+      "title": "Bakery",
+      "id": 1
+    },
+    {
+      "img": "../imgs/card-img (2).png",
+      "title": "Burger",
+      "id": 2
+    },
+    {
+      "img": "../imgs/card-img (3).png",
+      "title": "Beverage",
+      "id": 3
+    },
+    {
+      "img": "../imgs/card-img (4).png",
+      "title": "Chicken",
+      "id": 4
+    },
+    {
+      "img": "../imgs/card-img (5).png",
+      "title": "Pizza",
+      "id": 5
+    },
+    {
+      "img": "../imgs/card-img (6).png",
+      "title": "Seafood",
+      "id": 6
+    }
+  ],
+
+  "cards": [
+    {
+      "img": "/imgs/image (16).png",
+      "heart": "../../imgs/heart.png",
+      "title": "Fish Burger",
+      "price": 5.59,
+      "id": 1
+    },
+    {
+      "img": "/imgs/image (17).png",
+      "heart": "../../imgs/opacity.png",
+      "title": "Beef Burger",
+      "price": 5.59,
+      "id": 2
+    },
+    {
+      "img": "/imgs/image (18).png",
+      "heart": "../../imgs/opacity.png",
+      "title": "Cheese Burger",
+      "price": 5.59,
+      "id": 3
+    }
+  ],
+   "foods": [
+    {
+      "img": "/imgs/p1.png",
+      "title": "Fish Burger",
+      "id": 1
+    },
+    {
+      "img": "/imgs/p2.png",
+      "title": "Japan Ramen",
+      "id": 2
+    },
+    {
+      "img": "/imgs/p3.png",
+      "title": "Fried Rice",
+      "id": 3
+    }
+  ]
+}
