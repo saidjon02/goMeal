@@ -458,7 +458,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .menu-row2 {
   display: flex;
@@ -591,4 +591,42 @@
 }
 .bar-title2 {
   margin-top: 32px;
+}
+.click-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.click-btn:hover {
+  transform: translateY(-4px);
+}
+.menu-center {
+  display: grid;
+  align-items: center;
+  gap: -5px;
+}
+.inc {
+  line-height: 13px;
+  font-size: 17px;
+  padding: 2px;
+}
+.quan {
+  text-align: center;
+}
+.inc {
+  background-color: #f8b602;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.inc:hover {
+  background-color: #e0a030;
+}
+
+.inc:active {
+  background-color: #d08c20;
 }

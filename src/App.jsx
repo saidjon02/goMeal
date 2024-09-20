@@ -18,7 +18,7 @@ function App() {
           <div className="app-center">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="not" element={<Not />} />
+              <Route path="*" element={<Not />} />
             </Routes>
           </div>
           <div className="app-right">

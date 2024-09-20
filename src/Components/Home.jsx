@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Fetch from "./Fetch";
 import img1 from "../../imgs/plus.png";
 import img2 from "../../imgs/starts.png";
 import img3 from "../../imgs/dollar.png";
 import img4 from "../../imgs/opacity.png";
+import { CartContext } from "../context/Context";
 function Home() {
   const { data } = Fetch("http://localhost:8000/item");
   const { cards } = Fetch("http://localhost:8000/cards");
   const { foods } = Fetch("http://localhost:8000/foods");
+  const globalState = useContext(CartContext);
+  const dispatch = globalState.dispatch;
+  console.log(globalState);
   return (
     <div className="home">
       <div className="home-row1">
@@ -54,23 +58,31 @@ function Home() {
       </div>
       <div className="home-row4">
         {cards &&
-          cards.map((a) => (
-            <div className="home4-card" key={a.id}>
-              <img src={a.img} alt={a.title} className="home4-img" />
-              <img src={img2} alt="Star" className="home4-star" />
-              <div className="home4-row">
-                <div className="home4-texts">
-                  <h4 className="home4-title">{a.title}</h4>
-                  <h2 className="home4-price">
-                    <img src={img3} alt="" />
-                    {a.price}
-                  </h2>
+          cards.map((a) => {
+            a.quantity = 1;
+            return (
+              <div className="home4-card" key={a.id}>
+                <img src={a.img} alt={a.title} className="home4-img" />
+                <img src={img2} alt="Star" className="home4-star" />
+                <div className="home4-row">
+                  <div className="home4-texts">
+                    <h4 className="home4-title">{a.title}</h4>
+                    <h2 className="home4-price">
+                      <img src={img3} alt="" />
+                      {a.price}
+                    </h2>
+                  </div>
+                  <button
+                    className="click-btn"
+                    onClick={() => dispatch({ type: "ADD", payload: a })}
+                  >
+                    <img src={img1} alt="Star Icon" className="home4-starI" />
+                  </button>
                 </div>
-                <img src={img1} alt="Star Icon" className="home4-starI" />
+                <img src={a.heart} className="heart" alt="" />
               </div>
-              <img src={a.heart} className="heart" alt="" />
-            </div>
-          ))}
+            );
+          })}
       </div>
       <div className="home-row">
         <h2 className="home-titles">Recent Order </h2>
@@ -81,18 +93,31 @@ function Home() {
       </div>
       <div className="home-row4">
         {foods &&
-          foods.map((b) => (
-            <div className="home4-card" key={b.id}>
-              <img src={b.img} alt={b.title} className="home4-img" />
-              <h4 className="home4-title tac mt">{b.title}</h4>
-              <h2 className="home4-price tac mar">
-                <img src={img3} alt="" />
-                5.59
-              </h2>
-              <p className="distanse tac">4.97 km 21 min</p>
-              <img src={img4} className="heart" alt="" />
-            </div>
-          ))}
+          foods.map((b) => {
+            b.quantity = 1;
+            return (
+              <div className="home4-card" key={b.id}>
+                <img src={b.img} alt={b.title} className="home4-img" />
+                <img src={img2} alt="Star" className="home4-star" />
+                <div className="home4-row">
+                  <div className="home4-texts">
+                    <h4 className="home4-title">{b.title}</h4>
+                    <h2 className="home4-price">
+                      <img src={img3} alt="" />
+                      {b.price}
+                    </h2>
+                  </div>
+                  <button
+                    className="click-btn"
+                    onClick={() => dispatch({ type: "ADD", payload: b })}
+                  >
+                    <img src={img1} alt="Star Icon" className="home4-starI" />
+                  </button>
+                </div>
+                <img src={b.heart} className="heart" alt="" />
+              </div>
+            );
+          })}
       </div>
     </div>
   );
