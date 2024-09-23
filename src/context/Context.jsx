@@ -1,9 +1,10 @@
-// Context.jsx
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const Context = (props) => {
+  const cartFromStorage = JSON.parse(localStorage.getItem("cart")) || [];
+
   const reducer = (state, action) => {
     switch (action.type) {
       case "ADD":
@@ -47,7 +48,13 @@ export const Context = (props) => {
     }
   };
 
-  const [state, dispatch] = useReducer(reducer, []);
+  const [state, dispatch] = useReducer(reducer, cartFromStorage);
+
+  // Save cart state to localStorage whenever state changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state));
+  }, [state]);
+
   const info = { state, dispatch };
 
   return (

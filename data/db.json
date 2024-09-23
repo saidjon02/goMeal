@@ -58,7 +58,7 @@
   "foods": [
     {
       "img": "/imgs/p1.png",
-      "title": "Fish Burger",
+      "title": "Pepperoni Pizza",
       "heart": "../../imgs/opacity.png",
       "price": 14.99,
       "id": 4

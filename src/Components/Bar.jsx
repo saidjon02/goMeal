@@ -49,52 +49,59 @@ function Bar() {
       </div>
       <div className="menu">
         <h2 className="menu-title">Order Menu</h2>
-        {state.map((item, index) => {
-          return (
-            <div className="menu-row" key={index}>
-              <div className="menu-row2">
-                <div className="menu-left">
-                  <div className="menu-row3">
-                    <img src={item.img} alt="" />
-                    <div className="menu-box">
-                      <h2 className="menu-title2">item.title</h2>
-                      <p className="xl">xl</p>
+        {state.length > 0 ? (
+          state.map((item, index) => {
+            return (
+              <div className="menu-row" key={index}>
+                <div className="menu-row2">
+                  <div className="menu-left">
+                    <div className="menu-row3">
+                      <img src={item.img} alt="" />
+                      <div className="menu-box">
+                        {/* Remove the quotes around item.title */}
+                        <h2 className="menu-title2">{item.title}</h2>
+                        <p className="xl">xl</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="menu-center">
-                  <button
-                    className="inc"
-                    onClick={() =>
-                      dispatch({ type: "INCREASE", payload: item })
-                    }
-                  >
-                    +
-                  </button>
-                  <p className="quan">{item.quantity}</p>
-                  <button
-                    className="inc"
-                    onClick={() => {
-                      if (item.quantity > 1) {
-                        dispatch({ type: "DECREASE", payload: item });
-                      } else {
-                        dispatch({ type: "REMOVE", payload: item });
+                  <div className="menu-center">
+                    <button
+                      className="inc"
+                      onClick={() =>
+                        dispatch({ type: "INCREASE", payload: item })
                       }
-                    }}
-                  >
-                    -
-                  </button>
-                </div>
-                <div className="menu-right">
-                  <h2 className="home4-price">
-                    <img src={img4} alt="" />
-                    {Math.round(item.price * item.quantity)}
-                  </h2>
+                    >
+                      +
+                    </button>
+                    <p className="quan">{item.quantity}</p>
+                    <button
+                      className="inc"
+                      onClick={() => {
+                        if (item.quantity > 1) {
+                          dispatch({ type: "DECREASE", payload: item });
+                        } else {
+                          dispatch({ type: "REMOVE", payload: item });
+                        }
+                      }}
+                    >
+                      -
+                    </button>
+                  </div>
+                  <div className="menu-right">
+                    <h2 className="home4-price">
+                      <img src={img4} alt="" />
+                      {Math.round(item.price * item.quantity)}
+                    </h2>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        ) : (
+          <div className="empty">
+            <h2>You have not selected anything yet</h2>
+          </div>
+        )}
       </div>
       <div className="hr"></div>
       <div className="sevice">

@@ -19,7 +19,7 @@
 }
 .app-center,
 .app-right {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -264,6 +264,7 @@
 .home-row4 {
   display: grid;
   gap: 16px;
+  padding-bottom: 30px;
   grid-template-columns: 336px 336px 336px;
 }
 .home4-card {
@@ -629,4 +630,9 @@
 
 .inc:active {
   background-color: #d08c20;
+}
+
+.empty h2 {
+  text-align: center;
+  color: #f8b602;
 }
